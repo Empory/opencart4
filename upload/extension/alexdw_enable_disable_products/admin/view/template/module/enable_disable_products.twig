@@ -1,0 +1,43 @@
+{{ header }}
+<style type="text/css">
+.form-check-input:checked{background-color:#66b317;border-color:#4cb64c}.form-check-input:focus{border-color:#bfbfbf;outline:0;box-shadow:none}.form-switch .form-check-input:focus{background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23bfbfbf'/%3e%3c/svg%3e")}.form-switch .form-check-input:checked:focus{background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23fff'/%3e%3c/svg%3e")}.form-switch .form-check-input{transition:background-position .15s ease-in-out!important}
+</style>
+{{ column_left }}
+<div id="content">
+	<div class="page-header">
+		<div class="container-fluid">
+		<div class="float-end">
+		<span style="padding-right:20px;">
+		<a href="https://www.opencart.com/index.php?route=marketplace/extension&filter_member=AlexDW" target="_blank" data-bs-toggle="tooltip" title="More extensions" class="btn btn-info"><i class="fas fa-download"></i></a></span>
+			<button type="submit" form="form-module" data-bs-toggle="tooltip" title="{{ button_save }}" class="btn btn-primary"><i class="fas fa-save"></i></button>
+			<a href="{{ back }}" data-bs-toggle="tooltip" title="{{ button_back }}" class="btn btn-light"><i class="fas fa-reply"></i></a></div>
+			<h1>Enable / Disable Products 1.08</h1>
+			<ol class="breadcrumb">
+			{% for breadcrumb in breadcrumbs %}
+				<li class="breadcrumb-item"><a href="{{ breadcrumb.href }}">{{ breadcrumb.text }}</a></li>
+			{% endfor %}
+			</ol>
+		</div>
+	</div>
+	<div class="container-fluid">
+	<div class="card">
+		<div class="card-header d-flex">
+		<span><i class="fas fa-pencil-alt me-2"></i>{{ text_edit }}</span>
+		</div>
+		<div class="card-body">
+		<form id="form-module" action="{{ save }}" method="post" data-oc-toggle="ajax">
+			<div class="row mb-3">
+			<label class="col-sm-2 col-form-label">{{ entry_status }}</label>
+			<div class="col-sm-10">
+				<div class="form-check form-switch form-switch-lg">
+				<input type="checkbox" name="module_enable_disable_products_status" value="1" class="form-check-input"{% if module_enable_disable_products_status %} checked {% endif %}>
+				</div>
+				<div class="form-text">{{ help_status }}</div>
+			</div>
+			</div>
+		</form>
+		</div>
+		</div>
+	</div>
+</div>
+{{ footer }}

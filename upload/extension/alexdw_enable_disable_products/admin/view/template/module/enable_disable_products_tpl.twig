@@ -1,0 +1,31 @@
+<span style="padding-right:5px;">
+<button type="submit" form="form-product" formaction="{{ enable_pro }}" data-bs-toggle="tooltip" title="{{ button_enable_pro }}" class="btn btn-success"><i class="fa-solid fa-plus"></i></button>
+<button type="submit" form="form-product" formaction="{{ disable_pro }}" data-bs-toggle="tooltip" title="{{ button_disable_pro }}" class="btn btn-danger"><i class="fa-solid fa-minus"></i></button>
+</span>
+<span style="padding-right:10px;">
+<button type="submit" form="form-product" formaction="{{ enable_all }}" data-bs-toggle="tooltip" title="{{ button_enable_all }}" data-confirm="{{ button_enable_all }}" class="btn btn-success"><i class="fa-solid fa-check"></i></button>
+<button type="submit" form="form-product" formaction="{{ disable_all }}" data-bs-toggle="tooltip" title="{{ button_disable_all }}" data-confirm="{{ button_disable_all }}" class="btn btn-danger"><i class="fa-solid fa-power-off"></i></button>
+</span>
+<script type="text/javascript"><!--
+$(document).ready(function() {
+	$('button[data-confirm]').click(function(e) {
+		$('.alert').remove();
+		$('#form-product').attr('action', this.getAttribute('formAction'));
+
+		if (!$('#dataConfirmModal').length) {
+			$('body').append('<div id="dataConfirmModal" class="modal" aria-labelledby="dataConfirmLabel" aria-hidden="true"><div class="modal-dialog"><div class="modal-content"><div class="modal-body"></div><div class="modal-footer"><a class="btn btn-danger" id="dataConfirmOK">{{ text_yes }}</a><button class="btn btn-light" data-bs-dismiss="modal" aria-hidden="true">{{ text_no }}</button></div></div></div></div>');
+		}
+		$('#dataConfirmModal').find('.modal-body').text($(this).attr('data-confirm')+' ?');
+
+var endispro = new bootstrap.Modal(document.getElementById('dataConfirmModal'), {backdrop:true});
+
+		$('#dataConfirmOK').on('click', function(e) {
+			$('#form-product').attr('target', '_self').submit();
+			endispro.hide();
+		});
+
+		endispro.show();
+		return false;
+	});
+});
+//--></script>
