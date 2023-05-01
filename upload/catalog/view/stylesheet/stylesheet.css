@@ -167,14 +167,15 @@ footer a {
 }
 /* menu */
 #menu {
-  background-color: #229ac8;
-  background-image: linear-gradient(to bottom, #23a1d1, #1f90bb);
+  background-color: rgb(167, 159, 159);
+  /* background-image: linear-gradient(to bottom, #23a1d1, #1f90bb); */
   background-repeat: repeat-x;
   border: 1px solid #1f90bb;
-  border-color: #1f90bb #1f90bb #145e7a;
+  border-color: rgb(167, 159, 159);
   min-height: 40px;
   border-radius: 4px;
 }
+
 #menu.navbar {
   padding: 0 1rem;
   margin-bottom: 20px;
@@ -543,10 +544,10 @@ footer h5 {
   font-stretch: expanded;
   color: #FFF;
   padding: 6px 12px;
-  background-color: #229ac8;
+  /* background-color: #229ac8;
   background-image: linear-gradient(to bottom, #23a1d1, #1f90bb);
   background-repeat: repeat-x;
-  border-color: #1f90bb #1f90bb #145e7a;
+  border-color: #1f90bb #1f90bb #145e7a; */
 }
 .form-check .form-check-input {
   margin-top: 0.25rem;

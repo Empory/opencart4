@@ -6170,7 +6170,7 @@ textarea.form-control-lg {
   color: inherit !important;
 }
 .bg-primary {
-  background-color: #229ac8 !important;
+  /* background-color: #229ac8 !important; */
 }
 .bg-secondary {
   background-color: #6c757d !important;
